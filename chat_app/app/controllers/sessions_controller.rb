@@ -4,7 +4,7 @@ class SessionsController < ApplicationController
         if !!@user && @user.authenticate(params[:password])
 
             session[:user_id] = @user.id
-            redirect_to rooms_list_path
+            redirect_to rooms_index_path
         else
             message = "Something went wrong. Make sure the username and password are correct"
             redirect_to login_path, notice: message

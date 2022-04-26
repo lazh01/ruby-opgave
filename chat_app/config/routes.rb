@@ -1,8 +1,12 @@
 Rails.application.routes.draw do
-  get 'rooms/list', to: "rooms#list"
+  get 'rooms/index', to: "rooms#index"
   post 'rooms/create', to: "rooms#create"
   resources :rooms, only: [:new, :create, :edit, :update, :show, :destroy]
   
+  resources :rooms do
+    resources :messages
+  end
+
   get '/home', to: "landings#home"
   root "landings#home"
 
