@@ -1,4 +1,3 @@
 <%= form_with(model: [@current_room, @message]) do |f|%>
-    <%= f.text_field :content %> <br>
-    <%= f.submit %>
+    <%= f.text_field :content, :input_html => {:rows => 3}, class: "form-control w-full h-full", autocomplete: 'off' %> <br>
 <% end %>
