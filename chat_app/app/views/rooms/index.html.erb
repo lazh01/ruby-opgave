@@ -18,6 +18,11 @@
         <div style="height: 10%;">
         <h4 class="text-center"> <%= @current_room.title %> </h4>
         <h1 class="text-center"> <%= @id %> </h1>
+        <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+        <form action="/rooms/incpage" method="post">
+          <input type="submit" value="more messages" />
+        </form>
+      </button>
         </div>
         <div class="overflow-auto" style="height: 90%;">
           <%= turbo_stream_from @current_room %>

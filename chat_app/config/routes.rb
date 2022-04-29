@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
   get 'rooms/index', to: "rooms#index"
   post 'rooms/create', to: "rooms#create"
+  post'rooms/incpage', to: "rooms#incpage"
   resources :rooms, only: [:new, :create, :edit, :update, :show, :destroy]
-  
+
   resources :rooms do
     resources :messages
   end
