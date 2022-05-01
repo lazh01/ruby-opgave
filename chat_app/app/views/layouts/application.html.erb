@@ -9,12 +9,22 @@
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+
+    <style>
+      <%= ".msg-#{current_user&.id}" %> {
+      background-color: #007bff;
+      padding: 10px;
+      }
+      <%= ".cont-#{current_user&.id}" %> {
+      display: flex;
+      justify-content: flex-end;
+      }
+    </style>    
   </head>
 
   <body>
-    <main class="container mx-auto mt-28 px-5 flex">
+    <main class="container mx-auto">
       <% if logged_in? %>
-        <p> <%= current_user.username %> </p> <br>
         <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
           <form action="/logout">
             <input type="submit" value="logout" />
