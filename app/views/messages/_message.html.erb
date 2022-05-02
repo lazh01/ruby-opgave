@@ -1,0 +1,10 @@
+<div class="cont-<%= message.user.id %>">
+<div class="message-box msg-<%= message.user.id %>  text-white">
+    <h4 class="text-3xl"> <%= message.user.username %> </h6>
+    <%= message.content %>
+    <%= message.created_at%>
+    <% if message.user.avatar.attached?%>
+        <%= image_tag message.user.avatar %>
+    <% end %>
+</div>
+</div>
