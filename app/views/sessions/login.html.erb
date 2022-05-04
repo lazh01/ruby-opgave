@@ -1,9 +1,11 @@
-<div>
+<div class="m-auto w-min bg-white shadow overflow-hidden sm:rounded-lg">
     <p id="notice"><%= notice %></p>
-    <h2>Log in</h2>
+    <h4 class="text-4xl font-bold ">Log in</h2>
     <%= form_tag '/login' do %>
-        Username: <%= text_field_tag :username %> <br>
+        Email: <%= text_field_tag :email %> <br>
         Password: <%= password_field_tag :password %> <br>
-        <%= submit_tag "Log in" %>
+        <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" type="submit">
+        Log in
+        </button>
     <% end %>
 </div>
