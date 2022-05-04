@@ -11,6 +11,10 @@ module ChatApp
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.0
 
+    #avatar attachment crashes when these try to access a newly created one, so we disable them.
+    config.active_storage.analyzers = []
+    config.active_storage.previewers = []
+
     # Configuration for the application, engines, and railties goes here.
     #
     # These settings can be overridden in specific environments using the files

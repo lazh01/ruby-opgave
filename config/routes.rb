@@ -11,6 +11,8 @@ Rails.application.routes.draw do
   get '/home', to: "landings#home"
   root "landings#home"
 
+
+  post '/change_avatar', to: 'users#change_avatar'
   resources :users, only: [:new, :create, :edit, :update, :show, :destroy]
 
   get "/login", to: "sessions#login"
