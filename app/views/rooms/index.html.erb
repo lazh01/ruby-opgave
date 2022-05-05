@@ -2,6 +2,16 @@
   <div class ="sm:grid sm:grid-cols-10 sm:gap-4 sm:px-6">
     <div class ="sm:col-span-2">
       <h1 class="font-bold text-4xl">Rooms</h1>
+        <div>
+          <%= render 'users/change_avatar' %>
+        
+        <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+          <form action="/logout">
+            <input type="submit" value="Logout" />
+          </form> 
+        </button>
+        </div>
+      
       <%= turbo_stream_from "rooms" %>
       <div id="rooms">
         <%= render @rooms %>
