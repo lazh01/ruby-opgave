@@ -1,5 +1,7 @@
 class SessionsController < ApplicationController
-    #generates when given a valid email password combination, otherwise it stays on the login page and displays an error
+    #Sessions are used to identify users after they have logged in, currently the number 
+    #to choose how many messages to display is saved in the users session.
+    #generates when given a valid email password combination, otherwise it stays on the login page and displays an error.
     def create
         @user = User.find_by(email: params[:email])
         if !!@user && @user.authenticate(params[:password])
@@ -11,7 +13,8 @@ class SessionsController < ApplicationController
             redirect_to login_path, notice: message
         end
     end
-
+    
+    #Destroys the session, logging the user off. 
     def destroy
         session.delete(:user_id)
         @current_user = nil
