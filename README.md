@@ -6,7 +6,8 @@
 * Rails version
 7.0.2.4
 * Initialize <br/>
-From the base directory use "bundle install" to install dependencies.
+From the base directory use "bundle install" to install dependencies. <br/>
+Run "rails tailwindcss:install" and "rails tailwindcss:build" <br/>
 Start server with "rails s", and go to localhost:3000 to view the application.
 
 # Usage
