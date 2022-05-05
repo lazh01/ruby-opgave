@@ -23,3 +23,8 @@ A room can be clicked on to enter the room, where users cen write and recieve me
 In a room the 50 most recent messages are loaded, with a button to increase the amount in increments of 50. 
 Messages contain avatar, username, content and date/time and displays each of them. 
 at the bottom there is a text field and a send button, which when pressed creates a message with the contents of the textfield.
+
+# Bugs/problems
+Avatars caused crashes when trying to use variations. They also caused crashes when the app ran preview and analyse jobs on a newly created one. Right now the avatars are transfared in their default size each time, which is unoptimal, but it works. </br>
+Avatars also are not displayed properly in the live recieved messages, but work for messages already present when entering the chat. </br>
+Rooms needed to also have a description displayed, but adding it now would take some time because it would not fit in the current layout. </br>
