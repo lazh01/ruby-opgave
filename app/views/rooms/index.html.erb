@@ -18,11 +18,14 @@
         <%= render @rooms %>
       </div>
       </div>
-      <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded h-1/6">
+      <div>
+      <button class="bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded h-1/6">
         <form action="/rooms/new">
-          <input type="submit" value="new room" />
+          <input type="submit" value="New room" />
         </form>
       </button>
+      <button class="bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded h-1/6" onClick="window.location.reload();">Reload list</button>
+      </div>
     </div>
     <div class="sm:col-span-8 bg-sky-100 h-screen">
       <% if @current_room %>
