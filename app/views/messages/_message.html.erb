@@ -1,10 +1,17 @@
 <div class="cont-<%= message.user.id %>">
 <div class="message-box msg-<%= message.user.id %>  text-white">
-    <h4 class="text-3xl"> <%= message.user.username %> </h6>
-    <%= message.content %>
-    <%= message.created_at%>
+
+    <div class="flex space-x-4">
+    <div>
     <% if message.user.avatar.attached?%>
-        <%= image_tag message.user.avatar %>
+        <%= image_tag(message.user.avatar, width: "50", height: "50")  %>
     <% end %>
+    </div>
+    <div>
+    <h4 class="text-2xl font-bold"> <%= message.user.username %> </h6>
+    <div class="mt-1 mb-2"> <%= message.content %> </div>
+    <div class="italic text-xs"><%= message.created_at%> </div>
+    </div>
+    </div>
 </div>
 </div>
