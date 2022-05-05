@@ -29,4 +29,4 @@ at the bottom there is a text field and a send button, which when pressed create
 Avatars caused crashes when trying to use variations. They also caused crashes when the app ran preview and analyse jobs on a newly created one. Right now the avatars are transfared in their default size each time, which is unoptimal, but it works. </br></br>
 Avatars also are not displayed properly in the live recieved messages, but work for messages already present when entering the chat. </br></br>
 Rooms needed to also have a description displayed, but adding it now would take some time because it would not fit in the current layout. </br></br>
-The different forms probably needs some verification that the values are valid, currently it only matters that the type is correct. So it accepts non-emails as emails, and non-images files as avatars.
+The different forms probably needs some verification that the values are valid, currently it only matters that the type is correct. So it accepts non-emails as emails, and non-image files as avatars.
