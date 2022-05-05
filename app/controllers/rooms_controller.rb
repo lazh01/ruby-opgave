@@ -1,4 +1,5 @@
 class RoomsController < ApplicationController
+  #shows a list of rooms with the newest updated at the top, if not logged in redirects to login screen.
   def index
     @current_user = current_user
     redirect_to  '/login'  unless @current_user
@@ -9,6 +10,8 @@ class RoomsController < ApplicationController
     @room = Room.new
   end
 
+  #displays a chatroom. Has a counter for how many 50 message pages to load, which is incremented by a press of a button.
+  #the newest message is at the bottom
   def show
     if session[:current_room] != params[:id]
       session[:current_room] = params[:id]
@@ -23,12 +26,14 @@ class RoomsController < ApplicationController
     render "index"
   end
 
+  #increases the amount of messages to request
   def incpage
     session[:page] += 1
     puts session[:page]
     redirect_back_or_to({ action: "show", id: session[:current_room] })
   end
 
+  #creates a new room from a name
   def create
     @room = Room.new(room_params)
     if @room.save
