@@ -1,6 +1,7 @@
 class SessionsController < ApplicationController
+    #generates when given a valid email password combination, otherwise it stays on the login page and displays an error
     def create
-        @user = User.find_by(username: params[:email])
+        @user = User.find_by(email: params[:email])
         if !!@user && @user.authenticate(params[:password])
 
             session[:user_id] = @user.id

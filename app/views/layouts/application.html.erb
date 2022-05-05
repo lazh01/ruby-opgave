@@ -23,17 +23,7 @@
   </head>
 
   <body>
-    <main class="container mx-auto">
-      <% if logged_in? %>
-        <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-          <form action="/logout">
-            <input type="submit" value="logout" />
-          </form>
-          <div>
-            <%= render 'users/change_avatar' %>
-          </div>
-        </button>
-      <% end %>
+    <main class="container mx-auto my-auto">
       <%= yield %>
     </main>
   </body>
