@@ -2,7 +2,7 @@ class RoomsController < ApplicationController
   def index
     @current_user = current_user
     redirect_to  '/login'  unless @current_user
-    @rooms = Room.all
+    @rooms = Room.all.sort_by(&:updated_at).reverse
   end
 
   def new
@@ -17,7 +17,7 @@ class RoomsController < ApplicationController
     @current_user = current_user
     @current_room = Room.find(params[:id])
     @id = params[:id]
-    @rooms = Room.all
+    @rooms = Room.all.sort_by(&:updated_at).reverse
     @message = Message.new
     @messages = @current_room.messages.last(50 * session[:page])
     render "index"
